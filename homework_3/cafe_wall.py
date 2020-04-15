@@ -28,15 +28,14 @@ def grid(x, y, num, size, offset):
         single_row(x - (offset * pow(-1, i)) / 2, y + i * (size + MORTAR), num, size)
 
 
-single_row(0,0,4,20)
-single_row(50,70,5,30)
+if __name__ == "__main__":
 
-grid(10, 150, 4, 25, 0)
-grid(250,200,3,25, 10)
-grid(425,180,5,20, 10)
-grid(400,20,2,35, 35)
+    single_row(0,0,4,20)
+    single_row(50,70,5,30)
 
-panel.mainloop()
+    grid(10, 150, 4, 25, 0)
+    grid(250,200,3,25, 10)
+    grid(425,180,5,20, 10)
+    grid(400,20,2,35, 35)
 
-
-#  single_row(x + offset / 2 - (offset * pow(-1.0, i)) / 2,  y + i * (size + MORTAR), num, size)
+    panel.mainloop()
