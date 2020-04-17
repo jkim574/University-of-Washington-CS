@@ -104,12 +104,14 @@ def age():
     current_day = int(input("Current day? "))
     print()
 
+    ages = []
     num = int(input("Number of people? "))
     for each_person in range(num):
         #each person has his/her own birth year, month, and date data.
         birth_years = int(input("Birth year? "))
 
         current_age = current_year - birth_years
+        ages.append(current_age)
 
         birth_month = int(input("Birth month? "))
         birth_day = int(input("Birth day of month? "))
@@ -117,7 +119,7 @@ def age():
             print("Happy", ordinal(current_age), "birthday!")
         print("")
 
-    print("The youngest person is age", str(min(current_age)))
+    print("The youngest person is age", str(min(ages)))
     if min_allow_age <= current_age:
         print("Everyone is old enough. Welcome!")
     else:
