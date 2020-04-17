@@ -117,9 +117,11 @@ def age():
             print("Happy", ordinal(current_age), "birthday!")
         print("")
 
-def comparison():
-    if min.allow_age < each_person.current_age:
-        print("")
+    print("The youngest person is age", str(min(current_age)))
+    if min_allow_age <= current_age:
+        print("Everyone is old enough. Welcome!")
+    else:
+        print("Sorry, you have not all reached your", ordinal(min_allow_age), "birthday!")
 
 
 
