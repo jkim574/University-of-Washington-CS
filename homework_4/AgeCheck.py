@@ -117,8 +117,12 @@ def age():
             print("Happy", ordinal(current_age), "birthday!")
         print("")
 
-#def comparison():
-#    if age.min_allow_age <
+def comparison():
+    if min.allow_age < each_person.current_age:
+        print("")
+
+
+
 
 
 #this method prints an ordinal number and adds suffix.
