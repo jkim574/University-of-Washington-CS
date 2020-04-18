@@ -10,3 +10,6 @@ https://courses.cs.washington.edu/courses/cse142/09sp/handouts/hw3.html
 
 4th assignment:
 https://courses.cs.washington.edu/courses/cse142/09sp/handouts/hw4.html
+
+5th assignment:
+https://courses.cs.washington.edu/courses/cse142/09sp/handouts/hw5.html
