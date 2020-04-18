@@ -46,26 +46,43 @@ def play_games():
     return num_guess
 
 
-#the number of total games, total guesses, and best game, which had the fewest number of guess in trial
-def game_stats(total_games):
+def game_stats(total_games, best_game_number):
+    """The number of total games, total guesses, and best game, which had the
+    fewest number of guess in trial.
+
+    Note: Best game number starts from 0.
+    """
     print("Overall results:")
     print("    total games   =", total_games)
-#    print("    total guesses =", total_guess)
-
+    #    print("    total guesses =", total_guess)
+    print("Best game: " + str(best_game_number))
 
 
 if __name__ == "__main__":
     gameOver = False
     games = 0
-#    guess = 0
+    # guess = 0
+
+    # Maintaine a list of number of guesses for each game
+    num_guesses = []
     while gameOver == False:
-        play_games()
+        guesses = play_games()
+
+        # Add number of guesses to the list
+        num_guesses.append(guesses)
+
         games += 1
         choice = input("Do you want to play again?: ")
         if choice.lower().startswith('n'):
             gameOver = True
 
-    game_stats(games)
+    # Find minimum number of guesses
+    min_guesses = min(num_guesses)
+
+    # Find the index of min_guesses from the list
+    min_index = num_guesses.index(min_guesses)
+
+    game_stats(games, min_index)
 
 
 
