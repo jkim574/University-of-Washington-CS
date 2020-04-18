@@ -1,0 +1,100 @@
+from random import *
+
+# I'm thinking of a number between 1 and 100...
+# Your guess? 50
+# It's lower.
+# Your guess? 25
+# It's lower.
+# Your guess? 10
+# It's lower.
+# Your guess? 5
+# It's higher.
+# Your guess? 7
+# You got it right in 5 guesses
+# Do you want to play again? y
+
+# Overall results:
+#   total games   = 3
+#   total guesses = 19
+#   guesses/game  = 6.33
+#   best game     = 5
+
+# public static int playSingleGame(Scanner console, int totalGuesses, Random numberGenerator) {
+# 		System.out.println();
+# 		System.out.println("I'm thinking of a number between 1 and " + MAX + "...");
+
+# 		int number = numberGenerator.nextInt(MAX) + 1;
+# 		Boolean gameOver = false;
+# 		int noOfGuesses = 0;
+
+# 		while (gameOver == false) {
+# 			System.out.print("Your guess? ");
+# 			int guess = console.nextInt();
+# 			noOfGuesses++;
+# 			totalGuesses += noOfGuesses;
+# 			if (guess == number) {
+# 				System.out.println("You got it right in " + noOfGuesses + " guesses");
+# 				gameOver = true;
+# 			} else if (guess > number) {
+# 				System.out.println("It's lower.");
+# 			} else {
+# 				System.out.println("It's higher.");
+# 			}
+# 		}
+# 		return noOfGuesses;
+
+def play_games():
+    MAX = randint(2,100)
+    print("")
+    print("I'm thinking of a number between 1 and ", MAX, "...")
+    answer = randint(1,MAX)
+    print(answer)
+    num_guess = 0
+    gameOver = false
+
+    while(gameOver == false):
+        guess = int(input("Your guess? "))
+        num_guess += 1
+
+
+
+# def play():
+#     MAX = randint(2,100)
+#     num_guess = 1
+#     total_num_game = 0
+#  #   game_playing = True
+
+#     print("I'm thinking of a number between 1 and", MAX ," ....")
+#     answer = randint(1,MAX)
+#     print(answer)
+#     guess = int(input("Your guess? "))
+#     while answer != guess:
+#         num_guess += 1
+#         if guess < answer:
+#             print("It's higher")
+#             guess = int(input("Your guess? "))
+#         else:
+#             print("It's lower")
+#             guess = int(input("Your guess? "))
+#     print("You got it right in", num_guess, "times.")
+
+# def repeat():
+#     total_num_game = 1
+#     again = input("Do you want to play again? ")
+#     if again.lower().startswith("y"):
+#         print()
+#         play()
+#         repeat()
+#         total_num_game += 1
+#         print(total_num_game)
+#     elif again.lower().startswith("n"):
+#         print("Overall Results: \n total games = ", total_num_game)
+#     else:
+#         print("Don't understand")
+
+
+
+
+
+if __name__ == "__main__":
+    play_games()

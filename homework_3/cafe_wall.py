@@ -17,7 +17,7 @@ MORTAR = 2
  #function for drawing single row
 def single_row(x, y, num, size):
     for boxes in range(0, num):
-        print(f'x: {x}, y: {y}, num: {num}, size: {size}, boxes: {boxes}')
+        print('%dx, %dy, %dnum, %dsize, %dboxes' % (x, y, num, size, boxes))
         panel.canvas.create_rectangle(x + 2 * boxes * size, y, x + 2 * boxes * size + size, y + size, fill = "black")
         panel.canvas.create_rectangle(x + 2 * boxes * size + size, y, x + 2 * size + 2 * boxes * size ,y + size, fill = "white")
         panel.canvas.create_line(x + 2 * boxes * size, y, x + 2 * boxes * size + size, y + size, fill = "blue")
@@ -26,7 +26,7 @@ def single_row(x, y, num, size):
 #function for drawing multiple rows, combined as grid
 def grid(x, y, num, size, offset):
     for i in range(0, num * 2):
-        print(f'i: {i}, x: {x}, y: {y}, num: {num}, size: {size}, offset: {offset}')
+        print('%di, %dx, %dy, %dnum, %dsize, %doffset' % (i, x, y, num, size, offset))
         single_row(x - (offset * pow(-1, i)) / 2, y + i * (size + MORTAR), num, size)
         print()
 
