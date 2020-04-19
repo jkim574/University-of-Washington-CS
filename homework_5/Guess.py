@@ -22,7 +22,6 @@ from random import *
 
 def play_games():
     MAX = randint(2,100)
-    total_guess = 0
     print("")
     print("I'm thinking of a number between 1 and ", MAX, "...")
     answer = randint(1,MAX)
@@ -34,7 +33,6 @@ def play_games():
     while(game_over == False):
         guess = int(input("Your guess? "))
         num_guess += 1
-        total_guess += num_guess
         if guess == answer:
             print("You got it right in ", num_guess, "guesses")
             game_over = True
@@ -46,7 +44,7 @@ def play_games():
     return num_guess
 
 
-def game_stats(total_games, best_game_number):
+def game_stats(total_games, total_num_guess, best_game_number):
     """The number of total games, total guesses, and best game, which had the
     fewest number of guess in trial.
 
@@ -54,22 +52,25 @@ def game_stats(total_games, best_game_number):
     """
     print("Overall results:")
     print("    total games   =", total_games)
-    #    print("    total guesses =", total_guess)
-    print("Best game: " + str(best_game_number))
+    print("    total guesses =", total_num_guess)
+    print("    guesses/game  =", total_num_guess / total_games)
+    print("    Best game     =", best_game_number)
 
 
 if __name__ == "__main__":
     gameOver = False
     games = 0
-    # guess = 0
+    guess = 0
+    total_guess = 0
 
-    # Maintaine a list of number of guesses for each game
+
+  # Maintaine a list of number of guesses for each game
     num_guesses = []
     while gameOver == False:
-        guesses = play_games()
-
-        # Add number of guesses to the list
-        num_guesses.append(guesses)
+        guess = play_games()
+        total_guess += guess
+        #add number of guesses to the list
+        num_guesses.append(guess)
 
         games += 1
         choice = input("Do you want to play again?: ")
@@ -78,11 +79,11 @@ if __name__ == "__main__":
 
     # Find minimum number of guesses
     min_guesses = min(num_guesses)
-
+ #   print(type(num_guesses))
     # Find the index of min_guesses from the list
     min_index = num_guesses.index(min_guesses)
 
-    game_stats(games, min_index)
+    game_stats(games, total_guess, min_index)
 
 
 
