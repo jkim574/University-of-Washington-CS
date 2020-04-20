@@ -83,7 +83,7 @@ if __name__ == "__main__":
     # Find the index of min_guesses from the list
     min_index = num_guesses.index(min_guesses)
 
-    game_stats(games, total_guess, min_index)
+    game_stats(games, total_guess, min_index )
 
 
 
