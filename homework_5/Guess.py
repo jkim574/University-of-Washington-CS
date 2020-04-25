@@ -54,7 +54,7 @@ def game_stats(total_games, total_num_guess, best_game_number):
     print("    total games   =", total_games)
     print("    total guesses =", total_num_guess)
     print("    guesses/game  =", total_num_guess / total_games)
-    print("    Best game     =", best_game_number)
+    print("    Best game     =", best_game_number + 1)
 
 
 if __name__ == "__main__":
@@ -83,42 +83,55 @@ if __name__ == "__main__":
     # Find the index of min_guesses from the list
     min_index = num_guesses.index(min_guesses)
 
-    game_stats(games, total_guess, min_index )
+    game_stats(games, total_guess, min_index)
 
 
 
 
-# this is the first code I wrote
-# def play():
-#     MAX = randint(2,100)
-#     num_guess = 1
-#     total_num_game = 0
-#  #   game_playing = True
+# # Introduction to the Guess Game
+# def game_intro():
+#    print("This program allows you to play a guessing game.");
+#    print("I will think of a number between 1 and");
+#    print("100 and will allow you to guess until");
+#    print("you get it.  For each guess, I will tell you");
+#    print("whether the right answer is higher or lower");
+#    print("than your guess.");
 
-#     print("I'm thinking of a number between 1 and", MAX ," ....")
-#     answer = randint(1,MAX)
-#     print(answer)
-#     guess = int(input("Your guess? "))
-#     while answer != guess:
-#         num_guess += 1
-#         if guess < answer:
-#             print("It's higher")
-#             guess = int(input("Your guess? "))
-#         else:
-#             print("It's lower")
-#             guess = int(input("Your guess? "))
-#     print("You got it right in", num_guess, "times.")
+# # Plays one game of the Guessing game and returns the amount of guesses
+# # the player took to win.
+# def guessing_game():
+#    answer = randrange(1, 100);  # randrange operates faster than randint
+#    guess = int(input("Your guess? "));
+#    guess_count = 1;
+#    while guess != answer:
+#       guess = int(input("Your guess? "));
+#       guess_count += 1;
+#    return guess_count;
 
-# def repeat():
-#     total_num_game = 1
-#     again = input("Do you want to play again? ")
-#     if again.lower().startswith("y"):
-#         print()
-#         play()
-#         repeat()
-#         total_num_game += 1
-#         print(total_num_game)
-#     elif again.lower().startswith("n"):
-#         print("Overall Results: \n total games = ", total_num_game)
-#     else:
-#         print("Don't understand")
+# def main():
+#    game_intro();
+#    # Counters
+#    total_games = 0;
+#    total_guesses = 0;
+#    best_game = 0;
+#    least_guessed = 101;
+#    continue_playing = "y";
+#    while continue_playing.startswith("y", 0, len(continue_playing)):
+#       guess_counter = guessing_game();
+#       # end of game phase
+#       total_games += 1;                   # increments total games
+#       total_guesses += guess_counter;     # increments guesses per game
+#       if guess_counter < least_guessed:   # checks for best game
+#          least_guessed = guess_counter;
+#          best_game = total_games;
+#       continue_playing = input("Do you want to play again? ").lower();
+#    guesses_per_game = float(total_guesses) / total_games;
+#    # Display Information
+#    print("Overall results:");
+#    print("     total games   = %d" % total_games);
+#    print("     total guesses = %d" % total_guesses);
+#    print("     guesses/game  = %.1f" % guesses_per_game);
+#    print("     best game     = %d" % best_game);
+
+# if __name__ == "__main__":
+#     main();

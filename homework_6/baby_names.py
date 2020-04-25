@@ -21,29 +21,31 @@ def user_intro():
 
 # method to prompt the user to search for a name, and return the line matching
 # the requested name in the names database
-def search(filename):
-    infile = open(filename, 'r')
-    infile.readline()
+def search():
+    file = open("names.txt", 'r')
+
     name = []
     gender = []
-    for line in infile:
+    for line in file:
         words = line.split()
         name.append(words[0])
         gender.append(words[1])
 
-    infile.close()
 
-    u_names = input("name? ")
-    sex = input("sex (M of F)? ")
-    if names and sex in line:
-        print("name is ", u_names, "gender is", sex)
+    user_name_input = input("name? ")
+    user_sex_input = input("sex (M or F)? ")
+    search_string = user_name_input.upper() , " " , user_sex_input.upper()
 
-    return line
+    print(search_string)
+    # if user_name_input and user_sex_input in name or gender:
+    #     print("true")
+    # else:
+    #     print("your name is not in the list")
 
 
 
 #panel.mainloop()
-search('names.txt')
+search()
 
 
 
@@ -64,6 +66,7 @@ search('names.txt')
 #         # Read all lines in the file one by one
 #         for line in read_obj:
 #             # For each line, check if line contains the string
+#             line_number = line_number + words
 #             line_number += 1
 #             if string_to_search in line:
 #                 # If yes, then add the line number & line as a tuple in the list
