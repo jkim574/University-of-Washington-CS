@@ -1,55 +1,4 @@
 
-# f = open("scores.txt", 'r')
-# f1 = f.readlines()
-# for i in f1:
-#     print(i)
-
-
-
-# scores = [0]*102
-
-# #for each line in the file increment count of that score
-# for line in file("scores.txt"):
-#     scores[int(line)]+=1
-
-# for i in range(len(scores)):
-#     if scores[i] > 0:
-#         print str(i) + ": " + "*" * scores[i]
-
-
-
-# f = open("hours.txt")
-
-# for line in f:
-#     tokens = line.split()
-#     id = tokens[0]
-#     name = tokens[1]
-# #    print("id is: ", id)
-# #    print("name is: ", name)
-
-
-# #    cumulative sum of employee's hours
-#     hours = 0.0
-#     days = 0
-#     for token in tokens[2:]:
-#         hours += float(token)
-#         days += 1
-#         print("hours :", hours)
-#         print("days: ", days)
-
-#     average = hours / days
-#     above = 0
-#     for token in tokens[2:]:
-#         if float(token) > average:
-#             above += 1
-
-#     print(name, "worked for", hours, ", and the average is", average, "and", above, "days above the average")
-
-
-
-
-
-
 
 
 # Introduction to Personality Test Software
@@ -104,10 +53,7 @@ def sort_answers(answers, char):
     for i in range(10):
         if answers[i * 7].upper() == char:
             my_list[0] += 1
-        for j in range(3):
-            for k in range(1, 3):
-                if answers[i*7 + j*2 + k].upper() == char:
-                    my_list[j+1] += 1
+
     return my_list
 
 
@@ -136,16 +82,6 @@ def main():
         if i % 2 != 0:
             personality_test.append(content[i].rstrip('\n'))
         else:
-            names.append(content[i].rstrip('\n'))
-    ppl_count = 0
-    while ppl_count < len(names):
-        A_response = sort_answers(personality_test[ppl_count], 'A')
-        B_response = sort_answers(personality_test[ppl_count], 'B')
-        overall_B = percent_of_B(A_response, B_response)
-        personality = extract_personality(overall_B);
-        data = names[ppl_count] + ": " + str(overall_B) + " = " + personality  + "\n";
-        fw.write(data);
-        ppl_count+= 1;
 
     fo.close();
 
