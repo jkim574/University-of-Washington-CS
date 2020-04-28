@@ -47,7 +47,7 @@ def extract_personality(B_list):
     return result
 
 
-# Returns number of times a specific answer was recordedin each of the four categories.
+#
 
 
 # Returns percentage of B answers in the Keirsey test to determine a personality type
