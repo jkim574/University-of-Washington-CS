@@ -48,13 +48,6 @@ def extract_personality(B_list):
 
 
 # Returns number of times a specific answer was recordedin each of the four categories.
-def sort_answers(answers, char):
-    my_list = [0, 0, 0, 0]
-    for i in range(10):
-        if answers[i * 7].upper() == char:
-            my_list[0] += 1
-
-    return my_list
 
 
 # Returns percentage of B answers in the Keirsey test to determine a personality type
@@ -80,8 +73,26 @@ def main():
     personality_test = []
     for i in range(len(content)):
         if i % 2 != 0:
-            personality_test.append(content[i].rstrip('\n'))
+            names.append(content[i].rstrip('\n'))
         else:
+            personality_test.append(content[i].rstrip('\n'))
+   print(personality_test)
+   print(personality_test[0])
+   list_counts = [0, 0, 0, 0]
+   for j in range(10):
+      #print(personality_test[0][j * 7])
+      if personality_test[0][j * 7].upper() == 'A':
+         my_list[0] += 1
+      for k in range(1, 3):
+         if personality_test[0][j * 7].upper() == 'A':
+            my_list[1] += 1
+      for k in range(3, 5):
+         if personality_test[0][j * 7].upper() == 'A':
+            my_list[2] += 1
+      for k in range(5, 7):
+         if personality_test[0][j * 7].upper() == 'A':
+            my_list[3] += 1
+
 
     fo.close();
 
