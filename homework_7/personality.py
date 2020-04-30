@@ -47,7 +47,8 @@ def extract_personality(B_list):
     return result
 
 
-#
+
+
 
 
 # Returns percentage of B answers in the Keirsey test to determine a personality type
@@ -57,6 +58,8 @@ def percent_of_B(A_list, B_list):
         percentage = int(round(float(B_list[i] / (A_list[i] + B_list[i]) * 100)))
         result.append(percentage)
     return result
+
+
 
 
 
@@ -94,7 +97,7 @@ def main():
             my_list[3] += 1
 
 
-    fo.close();
+    fo.close()
 
 
 
